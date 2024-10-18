@@ -1,0 +1,101 @@
+<!-- 動作テスト用 index-->
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- HatenaBlog Config html -->
+    <!-- 追加場所：ダッシュボード画面 => デザイン => 六角レンチ => ヘッダ -->
+    <!-- JSXGraphを使うためのコード -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jsxgraph/1.1.0/jsxgraph.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsxgraph/1.1.0/jsxgraphcore.min.js"></script>
+    <!-- MathJaxを使うためのコード -->
+    <script>
+      window.MathJax = {
+        loader: {
+          load: ["[tex]/physics", "[custom]/xypic.js", "[tex]/mathtools"],
+          paths: {
+            custom: "https://cdn.jsdelivr.net/gh/sonoisa/XyJax-v3@3.0.1/build/",
+          },
+        },
+        tex: {
+          tags: "ams",
+          macros: {
+            x: "{\\times}",
+            bm: ["{\\boldsymbol{#1}}", 1],
+            dd: ["{\\frac{\\partial #1}{\\partial #2}}", 2],
+            ZT: ["{\\mathcal{Z}\\left[#1\\right]}", 1],
+            IZT: ["{\\mathcal{Z^{-1}}\\left[#1\\right]}", 1],
+          },
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+          packages: {
+            "[+]": ["physics", "xypic", "mathtools", "amsmath"],
+            "[-]": ["braket"],
+          },
+        },
+        chtml: {
+          displayAlign: "left", // 数式を全て左寄せで出力する設定。
+        },
+      };
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <!--
+   <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+   -->
+    <!--  full -->
+    <script
+      type="text/javascript"
+      id="MathJax-script"
+      defer
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+    ></script>
+    <!-- -->
+    <!--
+       <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+   -->
+    <!-- 二重数四則演算グラフ表示 -->
+    <script src="https://cdn.jsdelivr.net/gh/zeta80a/DualNumberGraph/dualnumberJsxGraph.js"></script>
+    <title>lib test html</title>
+  </head>
+
+  <body>
+    <div>
+      和をグラフで表示すると<fig-rf class="figOperation"></fig-rf
+      >の通り。点$z_1$、および$z_2$を適当に動かすと、その和$z_1+z_2$の値がベクトル和と同様であることが確認できる。
+
+      <figure id="figOperation">
+        <select
+          id="patternSelect"
+          style="width: 100px; margin: 0 auto; height: 30px"
+        >
+          <option value="sum">z_1+z_2</option>
+          <option value="mul">z_1 z_2</option>
+          <option value="inv">1/z</option>
+          <option value="div">z_1/z_2</option>
+          <option value="div_i">b_1ε/b_2ε</option>
+        </select>
+        <div id="Operation" style="width: 400px; height: 400px"></div>
+        $ 1/z $はドラッグしている点の逆元を表示
+        <figcaption>和,積,逆元,商</figcaption>
+      </figure>
+    </div>
+
+    <script>
+      {
+        // main
+        const dualNumberOp = new DualNumberOperation("Operation");
+        FigureNumberAndReference();
+      }
+    </script>
+  </body>
+</html>
