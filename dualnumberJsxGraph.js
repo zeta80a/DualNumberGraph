@@ -257,6 +257,11 @@ class DualNumberOperation {
   }
 }
 
+// イベントハンドラー群
+document.addEventListener('DOMContentLoaded', function () {
+   const dualNumberOp = new DualNumberOperation("Operation");
+});
+
 // figureCaptionに順番に番号を振る。<fig-rf class="figX">要素でclassがfigXのfigureの図番号を表示(表示形式："図 #")
 // 注意点：はてなブログでは<fig-rf id="figX">要素を使用するときは、この要素を<div>で囲むこと。
 // 以下に利用例例を示す。
