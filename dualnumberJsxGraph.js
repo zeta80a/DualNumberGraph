@@ -272,26 +272,26 @@ class DualNumberOperation {
 // </div>
   // 図に番号を振るスクリプト
   // figureタグをすべて調べて1から番号を振る
- document.addEventListener("DOMContentLoaded", function () {
-    var figures = document.querySelectorAll("figure");
-    figures.forEach(function (figure, index) {
-      var figcaption = figure.querySelector("figcaption");
-      figcaption.innerHTML = "図 " + (index + 1) + ": " + figcaption.innerHTML;
-      figure.dataset.figureNumber = index + 1; // 図の番号をデータ属性に保存。
-    });
-  });
-  // 参照番号を付与:シャドウDOMを使用しないバージョン
-  // 参照番号は図に番号を振るスクリプトで各図に設定されたfigureNumberを読み取り表示
-//  window.addEventListener("load", function () {
- document.addEventListener("DOMContentLoaded", function () {
-    const figrefs = document.querySelectorAll("fig-rf"); //fig-ref要素を全て取得
+//  document.addEventListener("DOMContentLoaded", function () {
+//     var figures = document.querySelectorAll("figure");
+//     figures.forEach(function (figure, index) {
+//       var figcaption = figure.querySelector("figcaption");
+//       figcaption.innerHTML = "図 " + (index + 1) + ": " + figcaption.innerHTML;
+//       figure.dataset.figureNumber = index + 1; // 図の番号をデータ属性に保存。
+//     });
+//   });
+//   // 参照番号を付与:シャドウDOMを使用しないバージョン
+//   // 参照番号は図に番号を振るスクリプトで各図に設定されたfigureNumberを読み取り表示
+// //  window.addEventListener("load", function () {
+//  document.addEventListener("DOMContentLoaded", function () {
+//     const figrefs = document.querySelectorAll("fig-rf"); //fig-ref要素を全て取得
 
-    figrefs.forEach((figrf) => {
-      var fig = this.document.getElementById(figrf.className);
-      if (fig != null) {
-        // classで指定する図のidが存在する場合
-        var figN = fig.dataset.figureNumber;
-        figrf.innerHTML = "図 " + figN;
-      }
-    });
- });
+//     figrefs.forEach((figrf) => {
+//       var fig = this.document.getElementById(figrf.className);
+//       if (fig != null) {
+//         // classで指定する図のidが存在する場合
+//         var figN = fig.dataset.figureNumber;
+//         figrf.innerHTML = "図 " + figN;
+//       }
+//     });
+//  });

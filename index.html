@@ -89,12 +89,38 @@
 
    <!-- 二重数四則演算グラフ表示 -->
    <script src="https://cdn.jsdelivr.net/gh/zeta80a/DualNumberGraph/dualnumberJsxGraph.js"></script>
-    <script type="module">
-      document.addEventListener('DOMContentLoaded', function () {
-            // main
-            const dualNumberOp = new DualNumberOperation("Operation");
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // main
+ //     const dualNumberOp = new DualNumberOperation("Operation");
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const dualNumberOp = new DualNumberOperation("Operation");
+
+      var figures = document.querySelectorAll("figure");
+      figures.forEach(function (figure, index) {
+        var figcaption = figure.querySelector("figcaption");
+        figcaption.innerHTML = "図 " + (index + 1) + ": " + figcaption.innerHTML;
+        figure.dataset.figureNumber = index + 1; // 図の番号をデータ属性に保存。
       });
-     </script>    
+    });
+    // 参照番号を付与:シャドウDOMを使用しないバージョン
+    // 参照番号は図に番号を振るスクリプトで各図に設定されたfigureNumberを読み取り表示
+    //  window.addEventListener("load", function () {
+    document.addEventListener("DOMContentLoaded", function () {
+      const figrefs = document.querySelectorAll("fig-rf"); //fig-ref要素を全て取得
+
+      figrefs.forEach((figrf) => {
+        var fig = this.document.getElementById(figrf.className);
+        if (fig != null) {
+          // classで指定する図のidが存在する場合
+          var figN = fig.dataset.figureNumber;
+          figrf.innerHTML = "図 " + figN;
+        }
+      });
+    });
+  </script>
   </head>
 
   <body>
@@ -149,6 +175,5 @@
       //        console.log("after[" + document.getElementById('markdown-content').innerHTML + "]");
 
       </script>
-
   </body>
 </html>
