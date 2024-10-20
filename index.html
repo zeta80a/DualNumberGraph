@@ -58,9 +58,6 @@
     ></script>
     <title>lib test html</title>
 
-       <!-- 二重数四則演算グラフ表示 -->
-     <script src="https://cdn.jsdelivr.net/gh/zeta80a/DualNumberGraph/dualnumberJsxGraph.js"></script>
-
     <script type="module">
       // markdownライブラリ
       import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
@@ -89,10 +86,6 @@
       //    document.body.innerHTML = htmlContent;
       //});
   
-      document.addEventListener('DOMContentLoaded', function () {
-      // main
-       const dualNumberOp = new DualNumberOperation("Operation");
-    });
 
     // document.addEventListener("DOMContentLoaded", function () {
     //   var figures = document.querySelectorAll("figure");
@@ -118,12 +111,20 @@
     //   });
     // });  
 </script>
-
+       <!-- 二重数四則演算グラフ表示 -->
+       <script src="https://cdn.jsdelivr.net/gh/zeta80a/DualNumberGraph/dualnumberJsxGraph.js"></script>
+       <script>
+         document.addEventListener('DOMContentLoaded', function () {
+          // main
+          const dualNumberOp = new DualNumberOperation("Operation");
+         });
+       </script>
+   
   </head>
 
   <body>
 <div id="markdown">
-# sec1
+# sec1-test
 ## sec1 - 1
 ## sec1 - 2
 # sec2
