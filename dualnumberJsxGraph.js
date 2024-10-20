@@ -283,7 +283,9 @@ function FigureNumberAndReference() {
   });
   // 参照番号を付与:シャドウDOMを使用しないバージョン
   // 参照番号は図に番号を振るスクリプトで各図に設定されたfigureNumberを読み取り表示
-  window.addEventListener("load", function () {
+//  window.addEventListener("load", function () {
+ document.addEventListener("DOMContentLoaded", function () {
+
     const figrefs = document.querySelectorAll("fig-rf"); //fig-ref要素を全て取得
 
     figrefs.forEach((figrf) => {

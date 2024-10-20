@@ -63,11 +63,16 @@
   </head>
 
   <body>
-    # 1
-    ## 2
+    <div id="markdown">
+# sec1
+## sec1 - 1
+## sec1 - 2
+# sec2
+## sec2 - 1
+## sec2 - 2
     <div>
-      和をグラフで表示すると<fig-rf class="figOperation"></fig-rf
-      >の通り。点$z_1$、および$z_2$を適当に動かすと、その和$z_1+z_2$の値がベクトル和と同様であることが確認できる。
+      和をグラフで表示すると<fig-rf class="figOperation"></fig-rf>の通り。
+      点$z_1$、および$z_2$を適当に動かすと、その和$z_1+z_2$の値がベクトル和と同様であることが確認できる。
 
       <figure id="figOperation">
         <select
@@ -85,7 +90,54 @@
         <figcaption>和,積,逆元,商</figcaption>
       </figure>
     </div>
+上の<fig-rf class="figOperation"></fig-rf>は和、積、逆元、商のグラフ
 
+  </div>
+
+    <footer></footer>
+
+<script type="module">
+      // markdownライブラリ
+      import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
+      //const { marked } = require('marked');
+      //        document.getElementById('content').innerHTML =
+      //           marked.parse('# Marked in the browser\n\nRendered by **marked**.');
+      //        document.getElementById('content').innerHTML = marked.parse('# Marked in Node.js\n\nRendered by **marked**.');
+
+      // 特定のdivに対してパース
+//      document.getElementById('markdown').innerHTML = marked.parse(document.getElementById('markdown').innerHTML);
+      // body全体に対してパース
+      //        document.body.innerHTML = marked.parse(document.body.innerHTML);
+
+      //        console.log("before[" + document.getElementById('markdown').innerText +"]");
+      //        console.log("after[" + document.getElementById('markdown-content').innerHTML + "]");
+
+      //document.addEventListener('DOMContentLoaded', function () {
+      //    // <body>の全内容を取得
+      //    const bodyContent = document.body.innerHTML;
+
+      //    // MarkdownをHTMLに変換
+      //    const htmlContent = marked.parse(bodyContent);
+
+      //    // 変換したHTMLを<body>に再設定
+      //    document.body.innerHTML = htmlContent;
+      //});
+      //        document.addEventListener('DOMContentLoaded', function () {
+      //            // Markdownが含まれる要素を取得
+      ////            const markdownContent = document.getElementById('markdown').innerText;
+      //             var markdownContent = document.getElementById('markdown').innerText;
+
+      //            //var markdownContent = "# 見出1\n## 見出２\n### 見出３\n---\n - リストアイテム1\n - リストアイテム2\nこれは普通のテキストです。";
+      //            //console.log("log->["+markdownContent+"]");
+      //            // MarkdownをHTMLに変換
+      //            const htmlContent = marked.parse(markdownContent);
+
+      //            // 変換したHTMLを表示
+      //            document.getElementById('markdown-content').innerHTML = htmlContent;
+      //            //            document.getElementById('markdown').innerHTML = htmlContent;
+      //            //            console.log(htmlContent);
+      //        });
+  </script>
     <script>
       {
         // main
