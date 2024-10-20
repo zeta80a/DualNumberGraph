@@ -270,10 +270,9 @@ class DualNumberOperation {
 //  </figure>
 //
 // </div>
-function FigureNumberAndReference() {
   // 図に番号を振るスクリプト
   // figureタグをすべて調べて1から番号を振る
-  document.addEventListener("DOMContentLoaded", function () {
+ document.addEventListener("DOMContentLoaded", function () {
     var figures = document.querySelectorAll("figure");
     figures.forEach(function (figure, index) {
       var figcaption = figure.querySelector("figcaption");
@@ -285,7 +284,6 @@ function FigureNumberAndReference() {
   // 参照番号は図に番号を振るスクリプトで各図に設定されたfigureNumberを読み取り表示
 //  window.addEventListener("load", function () {
  document.addEventListener("DOMContentLoaded", function () {
-
     const figrefs = document.querySelectorAll("fig-rf"); //fig-ref要素を全て取得
 
     figrefs.forEach((figrf) => {
@@ -296,5 +294,4 @@ function FigureNumberAndReference() {
         figrf.innerHTML = "図 " + figN;
       }
     });
-  });
-}
+ });
